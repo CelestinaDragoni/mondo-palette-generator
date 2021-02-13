@@ -22,7 +22,7 @@ The intended focus is game development where if you like a color palette of a ga
 
 For example,
 
-Included in the `examples/` folder is, what I believe to be (I couldn't find it anywhere), the first ever consolidated palette of **The Legend of Zelda: A Link to the Past (Kamigami no Triforce)**. This is an example of a game with *lots* of colors and no real way of being able to consolidate them or infer (consider that the SNES has a 15-bit color range). Using this tool you can do this.
+Included in the `examples/` folder is, what I believe to be (I couldn't find it anywhere), the first ever consolidated palette of **The Legend of Zelda: A Link to the Past (Kamigami no Triforce)**. (Developer note, likely not complete, but close enough) This is an example of a game with *lots* of colors and no real way of being able to consolidate them or infer (consider that the SNES has a 15-bit color range). Using this tool you can do this.
 
 ## What You Need
 - NodeJS 12 or 14
