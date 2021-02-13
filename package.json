@@ -1,0 +1,16 @@
+{
+  "name": "mondo-palette-generator",
+  "version": "1.0.0",
+  "description": "A simple application that takes many screenshots and turns them into a working color palette for many uses.",
+  "main": "src/index.js",
+  "author": "KernelZechs",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "pngjs": "^6.0.0",
+    "tinycolor2": "^1.4.2"
+  },
+  "scripts": {
+    "start": "node ./src/index.js"
+  }
+}
