@@ -1,7 +1,7 @@
 const Glob      = require("glob");
 const PngJS     = require('pngjs').PNG;
 const fs        = require('fs');
-const tinycolor = require('tinycolor2');
+const colorSort = require('color-sorter');
 
 class PaletteGenerator {
 
@@ -26,6 +26,8 @@ class PaletteGenerator {
       return this.palette;
     }
 
+    let total = 0;
+
     const files = Glob.sync(`${this.path}/**/*.png`);
 
     if (!files) {
@@ -34,7 +36,9 @@ class PaletteGenerator {
     }
 
     for (const file of files) {
-      this.translatePixelsToPalette(file);
+      const count = this.translatePixelsToPalette(file);
+      total = total + count;
+      console.log(`File Processed: ${file} | New Colors ${count} | Total Colors ${total}`);
     }
 
     this.sortPalette();
@@ -46,13 +50,16 @@ class PaletteGenerator {
   /**
    * Reads the PNG and converts into into an array of hex values.
    * @param {string} file - PNG file in which to read from.
-   * @return {void}
+   * @return {integer} - New color count
    */
   translatePixelsToPalette(file) {
 
     // Read file in sync (this is a command line app not a web app).
     const data = fs.readFileSync(file);
     const png = PngJS.sync.read(data);
+
+    // Returns count of new colors.
+    let count = 0;
 
     // Nothing to do, the PNG didn't load.
     if (!png) {
@@ -74,9 +81,12 @@ class PaletteGenerator {
       }
 
       if (!this.palette.includes(color)) {
-          this.palette.push(color);
+        count += 1;
+        this.palette.push(color);
       }
     }
+
+    return count;
 
   }
 
@@ -90,9 +100,7 @@ class PaletteGenerator {
       return;
     }
 
-    this.palette = this.palette.sort(function(colorA, colorB) {
-      return tinycolor(colorA).toHsv().h - tinycolor(colorB).toHsv().h;
-    });
+    this.palette = this.palette.sort(colorSort.sortFn);
 
   }
 

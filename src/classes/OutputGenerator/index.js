@@ -28,6 +28,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeACO() {
+    console.log(`Generating ACO File`);
     const instance = new AdobeColorGenerator();
     instance.generate(`${this.path}/palette.aco`, this.palette);
   }
@@ -37,6 +38,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeJSON() {
+    console.log(`Generating JSON File`);
     JSONGenerator(`${this.path}/palette.json`, this.palette);
   }
 
@@ -45,6 +47,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeCSS() {
+    console.log(`Generating CSS File`);
     CSSGenerator(`${this.path}/palette.css`, this.palette);
   }
 
@@ -53,6 +56,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeLESS() {
+    console.log(`Generating LESS File`);
     LESSGenerator(`${this.path}/palette.less`, this.palette);
   }
 
@@ -61,6 +65,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeSASS() {
+    console.log(`Generating SASS/SCSS File`);
     SASSGenerator(`${this.path}/palette.sass`, this.palette);
     SASSGenerator(`${this.path}/palette.scss`, this.palette, true);
   }
@@ -70,6 +75,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeHTML() {
+    console.log(`Generating HTML File`);
     HTMLGenerator(`${this.path}/palette.html`, this.palette);
   }
 
@@ -78,6 +84,7 @@ class OutputGenerator {
    * @return {void}
    */
   makePNG() {
+    console.log(`Generating PNG File`);
     PNGGenerator(`${this.path}/palette.png`, this.palette);
   }
 
@@ -86,6 +93,7 @@ class OutputGenerator {
    * @return {void}
    */
   makeTEXT() {
+    console.log(`Generating TEXT File`);
     TEXTGenerator(`${this.path}/palette.txt`, this.palette);
   }
 
