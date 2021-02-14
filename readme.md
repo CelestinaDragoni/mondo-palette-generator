@@ -32,7 +32,7 @@ https://github.com/KernelZechs/zelda-link-to-the-past-color-palette.
 Just add your images to the `images/` folder in the root of this project. You can nest these in folders if you want to keep it organized. The only accepted file format is PNG. Why? Because they are lossless and it's the only thing that makes sense here.
 
 ## How To Run
-`yarn install` and then `yarn start` from your command line. This should work in Windows just fine but I haven't tested. I've only tested this in linux.
+`yarn install` and then `yarn start` from your command line. This was developed in Linux, however it does work in Windows using git-bash/cygwin. However it is much slower in Windows.
 
 ## Support
 There is none, I did this for fun. Sorry mah dude.
